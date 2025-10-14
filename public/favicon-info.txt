@@ -1,0 +1,3 @@
+<!-- This is a placeholder for the favicon image -->
+<!-- The actual image file should be saved as favicon.ico in the public folder -->
+<!-- The attached image shows a purple/blue gradient justice scales icon -->

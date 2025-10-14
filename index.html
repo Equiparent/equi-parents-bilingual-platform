@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equi-Parents - Simplify Co-Parenting</title>
     <meta name="description" content="Equi-Parents helps separated parents manage agreements, time, and communication to improve relationships with their children.">
-    <link rel="icon" type="image/x-icon" href="public/favicon_.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="public/favicon_io (3)/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon_io (3)/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon_io (3)/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon_io (3)/apple-touch-icon.png">
+    <link rel="manifest" href="public/favicon_io (3)/site.webmanifest">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -101,14 +104,9 @@
             localStorage.setItem('equi-parents-lang', 'es');
         });
 
-        // Check if user has a language preference stored and redirect immediately
-        const savedLang = localStorage.getItem('equi-parents-lang');
-        if (savedLang) {
-            window.location.href = `${savedLang}/landing.html`;
-        }
-        
-        // Remove auto-redirect - page stays until user clicks
-        // Users can now take their time to choose a language
+        // Page stays until user manually clicks a language button
+        // No automatic redirects - users can take their time to choose
+        // Language preference is saved but doesn't auto-redirect on return visits
     </script>
 </body>
 </html>

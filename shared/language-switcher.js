@@ -54,8 +54,31 @@ function getCurrentLanguage() {
     return 'en'; // default
 }
 
+// Scroll behavior for language switcher
+function handleLanguageSwitcherScroll() {
+    const switcher = document.querySelector('.language-switcher');
+    if (!switcher) return;
+    
+    const scrollThreshold = 100; // Show after scrolling 100px
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > scrollThreshold) {
+        switcher.classList.add('visible');
+        switcher.classList.remove('hidden');
+    } else {
+        switcher.classList.add('hidden');
+        switcher.classList.remove('visible');
+    }
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const currentLang = getCurrentLanguage();
     initLanguageSwitcher(currentLang);
+    
+    // Add scroll listener for language switcher visibility
+    window.addEventListener('scroll', handleLanguageSwitcherScroll);
+    
+    // Initial check
+    handleLanguageSwitcherScroll();
 });
