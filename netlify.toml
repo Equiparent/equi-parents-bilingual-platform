@@ -77,7 +77,7 @@
 [build.environment]
   NODE_VERSION = "18"
   SITE_NAME = "Equi-Parents Bilingual Platform"
-  DEFAULT_LANGUAGE = "en"
+  DEFAULT_LANGUAGE = "es"
   SUPPORTED_LANGUAGES = "en,es"
 
 # Environment variables for different deploy contexts

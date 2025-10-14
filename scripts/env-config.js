@@ -17,7 +17,7 @@ class EnvConfig {
             SITE_URL: 'https://equiparent.app',
             SITE_NAME: 'Equi-Parents Bilingual Platform',
             SITE_DESCRIPTION: 'A bilingual co-parenting platform to simplify managing agreements, time, and communication between separated parents',
-            DEFAULT_LANGUAGE: 'en',
+            DEFAULT_LANGUAGE: 'es',
             SUPPORTED_LANGUAGES: 'en,es',
             TIMEZONE: 'America/Santiago',
             CONTACT_EMAIL: 'contact@equiparent.app',
