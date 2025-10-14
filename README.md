@@ -1,6 +1,6 @@
-# Equi-Parents - Bilingual Co-Parenting Platform
+# Equi-Parents Bilingual Platform
 
-A web application to help separated parents manage agreements, time, and communication in both **English** and **Spanish**.
+A bilingual web application to help separated parents manage agreements, time, and communication in both **English** and **Spanish**.
 
 ## 🌍 Languages Supported
 
@@ -41,7 +41,7 @@ pnpm serve
 ## 📁 Project Structure
 
 ```
-equi-parents/
+equi-parents-bilingual-platform/
 ├── index.html                 # Language detection and selection
 ├── en/                        # English version
 │   ├── landing.html

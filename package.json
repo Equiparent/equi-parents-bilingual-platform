@@ -1,7 +1,7 @@
 {
-  "name": "equi-parents",
+  "name": "equi-parents-bilingual-platform",
   "version": "1.0.0",
-  "description": "A co-parenting application to simplify managing agreements, time, and communication between separated parents",
+  "description": "A bilingual co-parenting application to simplify managing agreements, time, and communication between separated parents",
   "main": "landing_blue.html",
   "scripts": {
     "start": "pnpm exec live-server --port=3000 --host=localhost --open=index.html",
@@ -47,10 +47,10 @@
   "homepage": "https://equiparents.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/equiparents/website.git"
+    "url": "git+https://github.com/equiparents/equi-parents-bilingual-platform.git"
   },
   "bugs": {
-    "url": "https://github.com/equiparents/website/issues"
+    "url": "https://github.com/equiparents/equi-parents-bilingual-platform/issues"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
