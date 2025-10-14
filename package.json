@@ -13,10 +13,12 @@
     "validate": "pnpm exec html-validate *.html en/*.html es/*.html",
     "validate:en": "pnpm exec html-validate en/*.html",
     "validate:es": "pnpm exec html-validate es/*.html",
+    "validate:env": "node scripts/validate-env.js",
     "format": "pnpm exec prettier --write \"**/*.{html,css,js}\"",
     "lint:css": "pnpm exec stylelint \"**/*.css\"",
     "optimize": "pnpm exec imagemin public/*.{jpg,jpeg,png} --out-dir=public/optimized",
     "sync-files": "node scripts/sync-translations.js",
+    "setup:env": "cp .env.example .env && echo '✅ .env file created from template'",
     "dev": "pnpm run start"
   },
   "keywords": [

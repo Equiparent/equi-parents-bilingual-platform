@@ -76,13 +76,24 @@
 # Forms configuration (if you have contact forms)
 [build.environment]
   NODE_VERSION = "18"
+  SITE_NAME = "Equi-Parents Bilingual Platform"
+  DEFAULT_LANGUAGE = "en"
+  SUPPORTED_LANGUAGES = "en,es"
 
-# Optional: Environment variables for different deploy contexts
+# Environment variables for different deploy contexts
 [context.production.environment]
   NODE_ENV = "production"
+  SITE_URL = "https://equiparents.cl"
+  CONTACT_EMAIL = "contact@equiparent.app"
+  DEBUG_MODE = "false"
 
 [context.deploy-preview.environment]
   NODE_ENV = "staging"
+  SITE_URL = "https://deploy-preview-${REVIEW_ID}--equiparents-bilingual-platform.netlify.app"
+  CONTACT_EMAIL = "staging@equiparent.app"
+  DEBUG_MODE = "true"
 
 [context.branch-deploy.environment]
   NODE_ENV = "development"
+  CONTACT_EMAIL = "dev@equiparent.app"
+  DEBUG_MODE = "true"
