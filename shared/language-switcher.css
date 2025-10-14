@@ -4,20 +4,20 @@
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: linear-gradient(135deg, 
-        rgba(139, 69, 191, 0.9) 0%, 
-        rgba(75, 85, 165, 0.9) 50%, 
-        rgba(43, 118, 227, 0.85) 100%);
+    background: linear-gradient(135deg, #8B45BF 0%, #4B55A5 50%, #2B76E3 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(139, 69, 191, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     padding: 8px;
     display: flex;
     gap: 5px;
     opacity: 0;
     transform: translateY(-20px);
-    transition: all 0.3s ease;
+    /* animate only properties we change for best performance */
+    will-change: opacity, transform;
+    transition: opacity 260ms cubic-bezier(.2,.8,.2,1),
+                transform 300ms cubic-bezier(.2,.8,.2,1);
     pointer-events: none;
 }
 
@@ -34,9 +34,7 @@
 }
 
 .lang-toggle {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(139, 69, 191, 0.2) 100%);
+    background: none;
     border: none;
     color: white;
     padding: 8px 12px;
@@ -49,23 +47,15 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .lang-toggle:hover {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.25) 0%, 
-        rgba(139, 69, 191, 0.35) 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(139, 69, 191, 0.3);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .lang-toggle.active {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.35) 0%, 
-        rgba(139, 69, 191, 0.5) 100%);
+    background: rgba(255, 255, 255, 0.3);
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(139, 69, 191, 0.4);
 }
 
 .lang-flag {
@@ -79,11 +69,6 @@
         top: 10px;
         right: 10px;
         padding: 6px;
-        background: linear-gradient(135deg, 
-            rgba(139, 69, 191, 0.95) 0%, 
-            rgba(75, 85, 165, 0.95) 50%, 
-            rgba(43, 118, 227, 0.9) 100%);
-        box-shadow: 0 6px 24px rgba(139, 69, 191, 0.4);
     }
     
     .lang-toggle {

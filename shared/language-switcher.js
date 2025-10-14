@@ -1,7 +1,8 @@
 // Language Switcher Component
 function createLanguageSwitcher(currentLang = 'en') {
     const switcher = document.createElement('div');
-    switcher.className = 'language-switcher';
+    // start hidden so CSS transition can animate it into view
+    switcher.className = 'language-switcher hidden';
     
     const currentPath = window.location.pathname;
     const fileName = currentPath.split('/').pop() || 'landing.html';
@@ -59,7 +60,7 @@ function handleLanguageSwitcherScroll() {
     const switcher = document.querySelector('.language-switcher');
     if (!switcher) return;
     
-    const scrollThreshold = 100; // Show after scrolling 100px
+    const scrollThreshold = 100;
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > scrollThreshold) {
@@ -76,9 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentLang = getCurrentLanguage();
     initLanguageSwitcher(currentLang);
     
-    // Add scroll listener for language switcher visibility
-    window.addEventListener('scroll', handleLanguageSwitcherScroll);
-    
-    // Initial check
-    handleLanguageSwitcherScroll();
+    // Debounced scroll listener to avoid jank
+    let scrollTimeout = null;
+    function debouncedScroll() {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            handleLanguageSwitcherScroll();
+            scrollTimeout = null;
+        }, 50); // 50ms debounce
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', debouncedScroll, { passive: true });
+    handleLanguageSwitcherScroll(); // Initial check
 });
