@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equi-Parents - Simplify Co-Parenting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * =================================================================
+         * ALL YOUR CSS STARTS HERE - You can edit the colors here!
+         * I've extracted the styles from your app.css file.
+         * To change the main color, just edit the --blue variable.
+         * =================================================================
+         */
+        :root {
+            --blue: #2B76E3; /* <-- CHANGE THIS COLOR FOR THE ENTIRE PAGE! */
+            --white: #FFFFFF;
+            --black: #1a1b1f;
+            --light-gray: #f8f9fa;
+            --primary-font: 'Outfit', sans-serif;
+        }
+
+        /* Normalization and global styles */
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            font-family: var(--primary-font);
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: var(--black);
+        }
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            font-weight: 900;
+            margin: 2rem 0;
+        }
+        h1 { font-size: 4.4rem; }
+        h2 { font-size: 3.6rem; text-align: center; }
+        h3 { font-size: 2.8rem; }
+        a { text-decoration: none; color: var(--blue); }
+        img { max-width: 100%; display: block; }
+        .text-center { text-align: center; }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            width: 150px;
+        }
+        .navigation a {
+            margin-left: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+        .navigation a:hover {
+            color: var(--blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../public/Banner-Linkedin-empresas - Editada.png');
+            background-size: cover;
+            background-position: center;
+            padding: 10rem 0;
+            color: var(--white);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 5rem;
+        }
+        .hero p {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            background-color: var(--blue);
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            font-weight: 700;
+            border-radius: .5rem;
+            transition: background-color .3s ease;
+        }
+        .button:hover {
+            background-color: #1a5cbf;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        /* Solution */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .feature-card {
+            background-color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #e1e1e1;
+            border-radius: 1rem;
+        }
+        .feature-card h3 {
+            color: var(--blue);
+            font-size: 2.2rem;
+        }
+
+        /* Team */
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+        .team-member {
+            flex-basis: 300px;
+            text-align: center;
+        }
+        .team-member p {
+            margin: 0;
+        }
+        .team-member .name {
+            font-weight: 700;
+        }
+        .team-member .role {
+            font-size: 1.4rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="/landing_blue.html" class="logo-link">
+                <img class="logo" src="../public/horizontal.png" alt="Equi-Parents Logo">
+            </a>
+            <nav class="navigation">
+                <a rel="preload" href="https://equiparents.app">Our Solution</>
+                <a href="#team">Team</a>
+                <a href="https://javiera-francisca-rojas-w3y4f5ny.scoreapp.com">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Simplify co-parenting.</h1>
+                <p>Manage agreements, time, and communication, avoiding lawsuits and improving the relationship with your children.</p>
+                <a href="/formulario.html" class="button">Join the Waiting List!</a>
+            </div>
+        </section>
+
+        <section id="solution" class="section container">
+            <h2>Our Solution</h2>
+            <a href="/acuerdos.html">
+
+                <div class="solution-grid">
+                    <div class="feature-card">
+                        <h3>Agreement Management</h3>
+                        <p>Create and record agreements clearly and simply to avoid misunderstandings.</p>
+                    </div>
+            </a>
+            <a href="/calendar.html">
+                <div class="feature-card">
+                    <h3>Shared Calendar</h3>
+                    <p>Organize parenting time with a smart calendar and automatic reminders.</p>
+                </div>
+            </a>
+            <a href="/family_canvas.html">
+                <div class="feature-card">
+                    <h3>Secure Communication</h3>
+                    <p>Improve dialogue through secure messaging focused on your children's well-being.</p>
+                </div>
+            </a>
+            <a href="/expenses-summary-view.html">
+                <div class="feature-card">
+                    <h3>Expense Management</h3>
+                    <p>Track and manage shared expenses easily with transparent records.</p>
+                </div>
+            </a>
+            <a href="/financial-agreements-view.html">
+            <div class="feature-card">
+                    <h3>Reports and Documents</h3>
+                    <p>Store and generate expense reports and important documents in one place.</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="team" class="section container">
+            <h2>Our Team</h2>
+             <div class="team-grid">
+                <div class="team-member">
+                    <p class="name">Javiera Rojas Cowper</p>
+                    <p class="role">CEO, Founder</p>
+                    <a href="/about_ceo.html" class="navigation">Javiera's Profile</a>
+                </div>
+
+                
+                <div class="team-member">
+                    <p class="name">Benjamín Prieto Cowper</p>
+                    <p class="role">Co-founder</p>
+                <a href="/about_cfo.html" class="navigation">Benjamín's Profile</a>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="wishlist" class="section container text-center">
+            <h2>Be the first to try Equi-Parents</h2>
+            <p>Join our waiting list and get priority access and exclusive benefits when we launch the app.</p>
+            <a href="#" class="button">I want to be on the list</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p> 2025 Equi-Parents. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* * =================================================================
+         * YOUR JAVASCRIPT STARTS HERE
+         * I've extracted the code from your bundle.min.js file.
+         * For now it's simple, but you can add interactivity here.
+         * =================================================================
+         */
+        document.addEventListener("DOMContentLoaded", function() {
+            // The original code was looking for a ".dark-mode-boton" element
+            // which doesn't exist in the HTML, causing an error.
+            // This check ensures the code only runs if the button is found.
+            const darkModeButton = document.querySelector(".dark-mode-boton");
+            if (darkModeButton) {
+                darkModeButton.addEventListener("click", function() {
+                    document.body.classList.toggle("dark-mode");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

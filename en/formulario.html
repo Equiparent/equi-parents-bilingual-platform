@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waiting List - Equi-Parents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --blue: #2B76E3;
+            --white: #FFFFFF;
+            --black: #1a1b1f;
+            --light-gray: #f8f9fa;
+            --primary-font: 'Outfit', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--primary-font);
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: var(--black);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin: 0 auto 2rem auto;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--blue);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: var(--primary-font);
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--blue);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a5cbf;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="../public/horizontal.png" alt="Equi-Parents Logo" class="logo">
+        
+        <h1>Join Our Waiting List</h1>
+        <p class="subtitle">Be the first to know when Equi-Parents launches and get exclusive early access.</p>
+        
+        <form id="waitlist-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="relationship-status">Relationship Status</label>
+                <select id="relationship-status" name="relationship_status">
+                    <option value="">Select an option</option>
+                    <option value="separated">Separated</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="single-parent">Single Parent</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="children-count">Number of Children</label>
+                <select id="children-count" name="children_count">
+                    <option value="">Select an option</option>
+                    <option value="1">1 child</option>
+                    <option value="2">2 children</option>
+                    <option value="3">3 children</option>
+                    <option value="4+">4 or more children</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="interests">What features interest you most?</label>
+                <textarea id="interests" name="interests" rows="3" placeholder="e.g., shared calendar, expense tracking, communication tools..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Join Waiting List</button>
+        </form>
+        
+        <a href="landing.html" class="back-link">&larr; Back to Home</a>
+    </div>
+
+    <script src="../shared/language-switcher.js"></script>
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the data to your backend
+            // For now, we'll just show a success message
+            alert('Thank you for joining our waiting list! We\'ll be in touch soon.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

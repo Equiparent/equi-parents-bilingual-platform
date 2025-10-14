@@ -1,0 +1,88 @@
+[build]
+  # Build command (not needed for static site, but can be used for preprocessing)
+  command = ""
+  # Directory to publish (current directory since files are in root)
+  publish = "."
+
+# Redirect rules for proper routing
+[[redirects]]
+  # Redirect root domain to language selection page
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Language-specific redirects for better SEO and user experience
+[[redirects]]
+  # Handle English routes
+  from = "/en/*"
+  to = "/en/:splat"
+  status = 200
+
+[[redirects]]
+  # Handle Spanish routes
+  from = "/es/*"
+  to = "/es/:splat"
+  status = 200
+
+# Legacy redirects for old landing page
+[[redirects]]
+  from = "/landing_blue.html"
+  to = "/index.html"
+  status = 301
+
+# Fallback for any missing pages - redirect to language selection
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Headers for better performance and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Performance headers
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Specific caching for HTML files (shorter cache)
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Longer cache for static assets
+[[headers]]
+  for = "/public/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/shared/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Specific language detection for index.html
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    # Allow language detection
+    Vary = "Accept-Language"
+
+# Forms configuration (if you have contact forms)
+[build.environment]
+  NODE_VERSION = "18"
+
+# Optional: Environment variables for different deploy contexts
+[context.production.environment]
+  NODE_ENV = "production"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "staging"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"

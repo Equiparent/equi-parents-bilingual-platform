@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equi-Parents: Vista Previa del Canvas Familiar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F4F6F8;
+            color: #3D3D3D;
+        }
+        .canvas-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease-in-out;
+        }
+        .canvas-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-[#F4F6F8] min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="https://placehold.co/40x40/4AABAF/FFFFFF?text=EP&font=poppins" alt="Equi-Parents Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-[#4AABAF]">Equi-Parents</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                     <span class="hidden sm:block text-sm text-gray-500">Sábado, 4 Oct 2025</span>
+                     <button class="bg-[#4AABAF] text-white px-4 py-2 rounded-lg hover:bg-[#409194] transition text-sm font-semibold">
+                         <a href="landing.html" class="text-white no-underline">Volver a Página Principal</a>
+                     </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Canvas Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+        <!-- Canvas Title -->
+        <div class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#3D3D3D]">Canvas Familiar de Leo</h1>
+            <p class="text-gray-500 mt-1">Un espacio compartido para que Alex y Jordan se coordinen.</p>
+        </div>
+
+        <!-- Canvas Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- Upcoming Events Card -->
+            <div class="canvas-card p-6 lg:col-span-2 xl:col-span-2">
+                <div class="flex items-center mb-4">
+                    <svg class="h-6 w-6 text-[#4AABAF] mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h2 class="text-xl font-semibold">Próximos Eventos</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- Event Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="text-sm font-semibold text-gray-500">OCT</p>
+                            <p class="text-2xl font-bold text-[#4AABAF]">06</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Cita con el Dentista</p>
+                            <p class="text-sm text-gray-500">10:30 AM en Clínica Dental Providencia</p>
+                             <p class="text-xs text-gray-400">Confirmación necesaria por Jordan.</p>
+                        </div>
+                    </div>
+                    <!-- Event Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="text-sm font-semibold text-gray-500">OCT</p>
+                            <p class="text-2xl font-bold text-[#4AABAF]">08</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Práctica de Fútbol de Leo</p>
+                            <p class="text-sm text-gray-500">5:00 PM en Parque Inés de Suárez</p>
+                            <p class="text-xs text-gray-400">Alex lo lleva esta semana.</p>
+                        </div>
+                    </div>
+                     <!-- Event Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="text-sm font-semibold text-gray-500">OCT</p>
+                            <p class="text-2xl font-bold text-[#4AABAF]">11</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Obra Escolar</p>
+                            <p class="text-sm text-gray-500">7:00 PM en el auditorio del colegio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- To-Do List Card -->
+            <div class="canvas-card p-6 lg:col-span-1 xl:col-span-2">
+                <div class="flex items-center mb-4">
+                     <svg class="h-6 w-6 text-[#4AABAF] mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                    <h2 class="text-xl font-semibold">Lista de Tareas Compartida</h2>
+                </div>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="h-5 w-5 rounded text-[#4AABAF] focus:ring-[#4AABAF]">
+                        <span class="text-gray-700">Comprar zapatillas nuevas para Leo</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="h-5 w-5 rounded text-[#4AABAF] focus:ring-[#4AABAF]" checked>
+                        <span class="text-gray-700 line-through">Firmar autorización para excursión</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="h-5 w-5 rounded text-[#4AABAF] focus:ring-[#4AABAF]">
+                        <span class="text-gray-700">Planificar detalles de fiesta de cumpleaños</span>
+                    </label>
+                     <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="h-5 w-5 rounded text-[#4AABAF] focus:ring-[#4AABAF]">
+                        <span class="text-gray-700">Confirmar asistencia a fiesta de Matías</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Recent Expenses Card -->
+            <div class="canvas-card p-6 lg:col-span-2 xl:col-span-3">
+                <div class="flex items-center mb-4">
+                    <svg class="h-6 w-6 text-[#4AABAF] mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 10v-1m0 0c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h2 class="text-xl font-semibold">Gastos Recientes</h2>
+                </div>
+                <div class="divide-y divide-gray-200">
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">Inscripción de fútbol</p>
+                            <p class="text-sm text-gray-500">Pagado por Alex el 2 Oct</p>
+                        </div>
+                        <p class="font-semibold text-lg">$35,000</p>
+                    </div>
+                     <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">Dinero para almuerzo escolar (Oct)</p>
+                            <p class="text-sm text-gray-500">Pagado por Jordan el 1 Oct</p>
+                        </div>
+                        <p class="font-semibold text-lg">$25,000</p>
+                    </div>
+                     <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">Chaqueta Nueva</p>
+                            <p class="text-sm text-gray-500">Pagado por Alex el 28 Sep</p>
+                        </div>
+                        <p class="font-semibold text-lg">$19,990</p>
+                    </div>
+                </div>
+                 <button class="mt-4 w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition font-medium text-sm">Ver Reporte Completo de Gastos</button>
+            </div>
+
+            <!-- Quick Notes Card -->
+            <div class="canvas-card p-6 bg-yellow-50 lg:col-span-1 xl:col-span-1">
+                <div class="flex items-center mb-4">
+                     <svg class="h-6 w-6 text-yellow-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                    <h2 class="text-xl font-semibold text-yellow-800">Notas Rápidas</h2>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-yellow-100 p-3 rounded-md">
+                        <p class="text-sm text-yellow-800">"A Leo se le está acabando la pasta dental. ¿Puede el que vaya al supermercado comprar?" - Jordan</p>
+                    </div>
+                    <div class="bg-yellow-100 p-3 rounded-md">
+                        <p class="text-sm text-yellow-800">"Recordatorio: La abuela lo recoge del colegio el viernes." - Alex</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../shared/language-switcher.js"></script>
+</body>
+</html>

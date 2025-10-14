@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equi-Parents - Simplify Co-Parenting</title>
+    <meta name="description" content="Equi-Parents helps separated parents manage agreements, time, and communication to improve relationships with their children.">
+    <link rel="icon" type="image/x-icon" href="public/favicon_.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .lang-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .lang-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .loading {
+            display: none;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        .flag {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="public/horizontal.png" alt="Equi-Parents Logo" class="logo">
+        <h1>Welcome to Equi-Parents</h1>
+        <p>Choose your preferred language to continue</p>
+        
+        <div class="language-selector">
+            <a href="en/landing.html" class="lang-button" id="english-btn">
+                <span class="flag">🇺🇸</span>
+                English
+            </a>
+            <a href="es/landing.html" class="lang-button" id="spanish-btn">
+                <span class="flag">🇪🇸</span>
+                Español
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Save language preference when user clicks
+        document.getElementById('english-btn').addEventListener('click', () => {
+            localStorage.setItem('equi-parents-lang', 'en');
+        });
+        
+        document.getElementById('spanish-btn').addEventListener('click', () => {
+            localStorage.setItem('equi-parents-lang', 'es');
+        });
+
+        // Check if user has a language preference stored and redirect immediately
+        const savedLang = localStorage.getItem('equi-parents-lang');
+        if (savedLang) {
+            window.location.href = `${savedLang}/landing.html`;
+        }
+        
+        // Remove auto-redirect - page stays until user clicks
+        // Users can now take their time to choose a language
+    </script>
+</body>
+</html>

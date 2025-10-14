@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Agreements - Equi-Parents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" xintegrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(160deg, #3b82f6 0%, #a855f7 100%);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #d8b4fe;
+            --accent-green: #22c55e;
+            --button-primary-bg: #10b981;
+            --button-download-bg: linear-gradient(90deg, #10b981, #2dd4bf);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .mobile-frame {
+            max-width: 420px;
+            margin: auto;
+            background-color: #0f172a;
+            border-radius: 2.5rem;
+            padding: 0.75rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .app-container {
+            background: var(--bg-gradient);
+            border-radius: 2rem;
+            padding: 1.5rem 1rem;
+            height: 800px;
+            overflow-y: auto;
+        }
+        
+        .app-container::-webkit-scrollbar { width: 0; }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+        .header-title h1 { font-size: 1.25rem; font-weight: 600; }
+        .header-title p { font-size: 0.85rem; color: var(--text-secondary); }
+        .back-btn { color: var(--text-primary); text-decoration: none; font-size: 1rem; }
+        
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .item-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+        .item-list li {
+            position: relative;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .item-list li::before {
+            content: '✓';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .status-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--card-border);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+        }
+        .status-section .label { font-size: 0.9rem; color: var(--text-secondary); }
+        .status-badge {
+            font-weight: 600;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+        }
+        .status-active { background-color: rgba(34, 197, 94, 0.2); color: #a7f3d0; }
+
+        .action-button {
+            width: 100%;
+            background-color: var(--button-primary-bg);
+            color: var(--text-primary);
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.2s;
+        }
+        .action-button:hover {
+            transform: scale(1.02);
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        #download-pdf-btn {
+            background: var(--button-download-bg);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            max-width: 420px;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+         #download-pdf-btn:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="capture-area">
+        <div class="mobile-frame">
+            <div class="app-container">
+                <header class="app-header">
+                    <a href="#" class="back-btn">&lt; Back</a>
+                    <div class="header-title">
+                        <div>
+                            <h1>Financial Agreements</h1>
+                            <p>Details about shared expenses</p>
+                        </div>
+                    </div>
+                </header>
+        
+                <main class="container">
+                    <div class="card">
+                        <h2>💰 Child Support</h2>
+                        <p>Details and calculations of fixed expenses for the comprehensive development of children.</p>
+                        <ul class="item-list">
+                            <li>Food and nutrition.</li>
+                            <li>Education expenses (tuition, supplies).</li>
+                            <li>Health (insurance and basic medical expenses).</li>
+                            <li>Housing and basic services.</li>
+                        </ul>
+                        <div class="status-section">
+                            <span class="label">Agreement Status</span>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2>👥 Extra Expenses</h2>
+                        <p>Agreements on additional recurring or planned costs.</p>
+                        <ul class="item-list">
+                            <li>Extracurricular activities (sports, arts).</li>
+                            <li>Additional clothing and footwear per season.</li>
+                            <li>School trips and planned outings.</li>
+                        </ul>
+                        <div class="status-section">
+                            <span class="label">Agreement Status</span>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2>🚨 Extraordinary Expenses</h2>
+                        <p>Management of unforeseen expenses and exceptional situations not covered by other agreements.</p>
+                         <ul class="item-list">
+                            <li>Medical emergencies or uncovered treatments.</li>
+                            <li>Special school equipment (trips, technology).</li>
+                            <li>Urgent and unforeseen needs.</li>
+                        </ul>
+                         <div class="status-section">
+                            <span class="label">Agreement Status</span>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="action-button">Manage Expenses</a>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <button id="download-pdf-btn">Download High Resolution PDF</button>
+    </div>
+
+    <script>
+        document.getElementById('download-pdf-btn').addEventListener('click', function () {
+            const element = document.getElementById('capture-area');
+            
+            const opt = {
+                margin:       0,
+                filename:     'Financial_Agreements_EquiParents.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { 
+                    scale: 4, // Higher scale for higher resolution
+                    useCORS: true, 
+                    backgroundColor: null // Transparent background to capture body gradient
+                },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // Generate the PDF from the entire mobile frame element
+            html2pdf().from(element).set(opt).save();
+        });
+    </script>
+
+    <script src="../shared/language-switcher.js"></script>
+</body>
+</html>

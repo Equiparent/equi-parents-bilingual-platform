@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Parenting Agreements - Equi-Parents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(160deg, #3b82f6 0%, #a855f7 100%);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #d8b4fe;
+            --accent-orange: #f97316;
+            --accent-green: #22c55e;
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .mobile-frame {
+            max-width: 420px;
+            margin: auto;
+            background-color: #0f172a;
+            border-radius: 2.5rem;
+            padding: 0.75rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .app-container {
+            background: var(--bg-gradient);
+            border-radius: 2rem;
+            padding: 1.5rem 1rem;
+            height: 800px;
+            overflow-y: auto;
+        }
+        
+        .app-container::-webkit-scrollbar { width: 0; }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+        .header-title h1 { font-size: 1.25rem; font-weight: 600; }
+        .header-title p { font-size: 0.85rem; color: var(--text-secondary); }
+        .back-btn { color: var(--text-primary); text-decoration: none; font-size: 1rem; }
+        
+        .main-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .main-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .main-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+
+        .principle-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .principle-1 { border: 2px solid var(--accent-orange); }
+        .principle-2 { border: 2px solid var(--accent-green); }
+        .principle-3 { border: 2px solid var(--accent-blue); }
+        .principle-4 { border: 2px solid var(--accent-pink); }
+
+        .agreements-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .agreements-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .agreement-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .agreement-item:hover {
+            background: rgba(0,0,0,0.3);
+        }
+        .agreement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .agreement-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .agreement-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .agreement-status {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="app-container">
+            <header class="app-header">
+                <a href="landing.html" class="back-btn">&lt; Back</a>
+                <div class="header-title">
+                    <div>
+                        <h1>Co-Parenting Agreements</h1>
+                        <p>Legal framework and family agreements</p>
+                    </div>
+                </div>
+            </header>
+    
+            <main class="container">
+                <div class="main-card">
+                    <h2>📋 Best Interest Principles</h2>
+                    <p>Our agreements are based on the fundamental principles of child welfare and co-parenting cooperation.</p>
+                    
+                    <div class="principles-grid">
+                        <div class="principle-item principle-1">
+                            <div>👶</div>
+                            <div>Child's Best Interest</div>
+                        </div>
+                        <div class="principle-item principle-2">
+                            <div>🤝</div>
+                            <div>Mutual Respect</div>
+                        </div>
+                        <div class="principle-item principle-3">
+                            <div>💬</div>
+                            <div>Open Communication</div>
+                        </div>
+                        <div class="principle-item principle-4">
+                            <div>⚖️</div>
+                            <div>Fair Distribution</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agreements-section">
+                    <h3>📝 Active Agreements</h3>
+                    
+                    <div class="agreement-item">
+                        <div class="agreement-title">
+                            💰 Child Support Agreement
+                        </div>
+                        <div class="agreement-description">
+                            Monthly financial support for basic needs including food, housing, education, and healthcare.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Active - Next payment: Oct 15, 2025
+                        </div>
+                    </div>
+
+                    <div class="agreement-item">
+                        <div class="agreement-title">
+                            📅 Custody Schedule
+                        </div>
+                        <div class="agreement-description">
+                            Alternating weeks arrangement with flexible adjustments for holidays and special events.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Active - Current week: Parent A
+                        </div>
+                    </div>
+
+                    <div class="agreement-item">
+                        <div class="agreement-title">
+                            🏥 Healthcare Decisions
+                        </div>
+                        <div class="agreement-description">
+                            Shared responsibility for medical decisions and health insurance coverage.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Active - Insurance: Covered
+                        </div>
+                    </div>
+
+                    <div class="agreement-item">
+                        <div class="agreement-title">
+                            📚 Education Choices
+                        </div>
+                        <div class="agreement-description">
+                            Joint decision-making for school selection, extracurricular activities, and academic support.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Active - School year: 2025-2026
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="../shared/language-switcher.js"></script>
+</body>
+</html>

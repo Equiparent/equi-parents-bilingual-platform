@@ -1,0 +1,80 @@
+{
+  "name": "equi-parents",
+  "version": "1.0.0",
+  "description": "A co-parenting application to simplify managing agreements, time, and communication between separated parents",
+  "main": "landing_blue.html",
+  "scripts": {
+    "start": "pnpm exec live-server --port=3000 --host=localhost --open=index.html",
+    "start:en": "pnpm exec live-server --port=3000 --host=localhost --open=en/landing.html",
+    "start:es": "pnpm exec live-server --port=3000 --host=localhost --open=es/landing.html",
+    "serve": "pnpm exec live-server --port=3000 --host=localhost",
+    "build": "echo \"No build process required for static HTML files\"",
+    "build:check": "node scripts/check-translations.js",
+    "validate": "pnpm exec html-validate *.html en/*.html es/*.html",
+    "validate:en": "pnpm exec html-validate en/*.html",
+    "validate:es": "pnpm exec html-validate es/*.html",
+    "format": "pnpm exec prettier --write \"**/*.{html,css,js}\"",
+    "lint:css": "pnpm exec stylelint \"**/*.css\"",
+    "optimize": "pnpm exec imagemin public/*.{jpg,jpeg,png} --out-dir=public/optimized",
+    "sync-files": "node scripts/sync-translations.js",
+    "dev": "pnpm run start"
+  },
+  "keywords": [
+    "co-parenting",
+    "family",
+    "parenting",
+    "calendar",
+    "agreements",
+    "children",
+    "dashboard",
+    "static-website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": {
+    "name": "Javiera Rojas Cowper",
+    "email": "contact@equiparents.app",
+    "url": "https://equiparents.app"
+  },
+  "contributors": [
+    {
+      "name": "Benjamín Prieto Cowper",
+      "role": "Co-founder"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://equiparents.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equiparents/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/equiparents/website/issues"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "html-validate": "^8.7.4",
+    "prettier": "^3.1.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "files": [
+    "*.html",
+    "public/**/*",
+    "README.md"
+  ]
+}
