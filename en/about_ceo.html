@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equi-Parents - Simplify Co-Parenting</title>
+    <title>Equi-Parents - Simplifica la Coparentalidad</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -22,6 +22,7 @@
             --black: #1a1b1f;
             --light-gray: #f8f9fa;
             --primary-font: 'Outfit', sans-serif;
+            --secondary-font: 'Poppins', sans-serif;
         }
 
         /* Normalization and global styles */
@@ -145,18 +146,38 @@
             padding: 3rem 0;
             margin-top: 4rem;
         }
+
+        /* Toggle-specific styles */
+.bio-toggle-container { text-align: center; margin-top: 1.5rem; }
+.bio-toggle-button {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: .9rem 1.2rem;
+  border-radius: .6rem;
+  cursor: pointer;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+.bio-toggle-button:focus { outline: 3px solid rgba(43,118,227,.25); }
+.bio-toggle-icon { transition: transform .25s ease; display:inline-flex; }
+.bio-toggle-button[aria-expanded="true"] .bio-toggle-icon { transform: rotate(180deg); }
+.bio-toggle-list-container { max-width: 900px; margin: 1.5rem auto 0; text-align: left; }
+.hidden { display: none !important; }
     </style>
 </head>
 <body>
 
     <header class="header">
         <div class="container">
-            <a href="/landing_blue.html" class="logo-link">
+            <a href="/en/landing.html" class="logo-link">
                 <img class="logo" src="../public/horizontal.png" alt="Equi-Parents Logo">
             </a>
             <nav class="navigation">
-                <a rel="preload" href="https://equiparents.app">Our Solution</>
-                <a href="/landing_blue.html#team">Team</a>
+                <a rel="preload" href="https://equiparents.app">Nuestra Solución</a>
+                <a href="/es/landing.html#team">Equipo</a>
                 <a href="https://javiera-francisca-rojas-w3y4f5ny.scoreapp.com">Blog</a>
             </nav>
         </div>
@@ -166,15 +187,60 @@
 <body>
 
 
-    <h1> Biography</h1>
+    <h1>Biography</h1>
     <h2 class="text-center">Javiera Rojas Cowper - CEO and Founder of Equi-Parents</h2>
-        <img src="../public/milan y mami.jpg" alt="Javiera Rojas Photo" style="display: block; margin: 0 auto; max-width: 300px; border-radius: 50%;">
-    <p class="text-center" style="font-size: 1.8rem; max-width: 800px; margin: 0 auto;" >
+        <img src="../public/milan y mami.jpg" alt="Photo of Javiera Rojas" style="display: block; margin: 0 auto; max-width: 300px; border-radius: 50%;">
+     <!-- Párrafos con clase CSS -->
+            <p class="bio-text text-center">
+                My journey of over 15 years as a school teacher and a co-parent has been key to deeply understanding the needs and challenges of our users. This experience has given me a solid innovative vision and execution capacity, essential elements for the takeoff and development of the startup.
+            </p>
+            <p class="bio-text text-center">
+                My 100% dedication to software development and the company has been the driving force behind its progress. I have personally led the IT development of the SaaS web platform, demonstrating high learning abilities, resilience, and proactivity in overcoming delays in funding, starting a computer programming career, and managing a company at the same time. This investment of time, effort, and personal and family sacrifices has forged invaluable capital:
+            </p>
+            
+            <!-- === CAMBIO: LISTA INTERACTIVA === -->
+<!-- Botón para mostrar/ocultar -->
+<div class="bio-toggle-container">
+  <button id="toggle-bio-list"
+          class="bio-toggle-button"
+          aria-expanded="false"
+          aria-controls="bio-toggle-list">
+    <span class="toggle-text">See more</span>
+    <span class="bio-toggle-icon" aria-hidden="true">
+      <!-- Icono de flecha (chevron) -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </span>
+  </button>
+</div>
 
-Javiera Rojas, as CEO, was instrumental in driving the company's vision. With over 15 years of experience as a user, she is familiar with the constraints that must be overcome to ensure the company's success. Her keen innovative acumen, combined with her strong execution skills, led to the startup's initial takeoff and development.</p>
+<!-- Contenedor desplegable -->
+<div id="bio-toggle-list" class="bio-toggle-list-container hidden">
+  <ul>
+    <li>Development of technical skills in programming and project management.</li>
+    <li>Digital Artifacts: Development of a non-functional prototype to a functional minimum viable product with several applied iterations.</li>
+    <li>Awarding of public funds from the Semilla Inicia instrument of CORFO RM 2024-2025.</li>
+    <li>Experience in business management and team leadership.</li>
+    <li>Participation in support and mentoring programs for tech entrepreneurs:</li>
+    <li>Business Incubation at ACELERALATAM</li>
+    <li>Mentoring Program of RedUI de UdeC</li>
+    <li>Trademark registration and prospect of Industrial Patent</li>
+    <li>Formalization of the company and constitution of SpA with my co-founder partner.</li>
+    <li>Strategic collaborators; Pleyasoft in development, Eytel Comunicaciones in Branding, Marketing and Dissemination, and Grupo Mavtec in advice on Intellectual Property.</li>
+    <li>Sustainability and impact: Escuela Mujer Sustentable in collaboration with Centro Nace Bci and supported by CORFO.</li>
+    <li>Support from strategic partner in administration and finance: UDD Ventures.</li>
+    <li>Creation of a solid network of professional contacts in the technological and business field.</li>
+  </ul>
+</div>
+         
+            <!-- === FIN DE CAMBIO === -->
 
-<div class="button" style="background: white; display: flex; flex-direction: column; justify-content: space-between;">
-<div class="libutton" style="margin-bottom: 10px;">
+            
+            <p class="bio-text text-center" style="margin-top: 3rem;"> <!-- Añadido un margen superior para separar del botón -->
+                This human and social capital is fundamental for the growth and sustainability of Equi-Parents.
+            </p>
+
       <style>
         .libutton {
           display: flex;
@@ -192,7 +258,8 @@ Javiera Rojas, as CEO, was instrumental in driving the company's vision. With ov
           font-family: "SF Pro Text", Helvetica, sans-serif;
         }
       </style>
-<a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=equiparent" target="_blank">Follow on LinkedIn</a>
+<a class="libutton" href="https://www.linkedin.com/in/equiparent/" target="_blank">Follow on LinkedIn</a>
+      </style>
 </div>
 <div class="f6sbutton">
 <a href="https://www.f6s.com/member/javiera-francisca-rojas-cowper?follow=1" target="_blank"
@@ -204,7 +271,7 @@ padding: 0px; margin: 0px;" /></a>
 </div>
 <footer class="footer">
         <div class="container">
-            <p> 2025 Equi-Parents. All rights reserved.</p>
+            <p>2025 Equi-Parents. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -227,6 +294,22 @@ padding: 0px; margin: 0px;" /></a>
             }
         });
     </script>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // existing dark-mode code may be present; this code is just for the toggle
+    const btn = document.getElementById('toggle-bio-list');
+    const list = document.getElementById('bio-toggle-list');
+    if (!btn || !list) return;
+
+    btn.addEventListener('click', function() {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      list.classList.toggle('hidden');
+      btn.querySelector('.toggle-text').textContent = expanded ? 'Ver más' : 'Ver menos';
+    });
+  });
+</script>
 
     <script src="../shared/language-switcher.js"></script>
 </body>
