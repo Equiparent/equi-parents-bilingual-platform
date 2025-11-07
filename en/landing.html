@@ -13,22 +13,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
     
-    <style>
+   <style>
         /* * =================================================================
-         * ALL YOUR CSS STARTS HERE - You can edit the colors here!
-         * I've extracted the styles from your app.css file.
-         * To change the main color, just edit the --blue variable.
+         * TODO TU CSS COMIENZA AQUÍ - ¡Puedes editar los colores aquí!
+         * He extraído los estilos de tu archivo app.css.
+         * Para cambiar el color principal, solo edita la variable --blue.
          * =================================================================
          */
         :root {
-            --blue: #2B76E3; /* <-- CHANGE THIS COLOR FOR THE ENTIRE PAGE! */
+            --blue: #2B76E3; /* <-- ¡CAMBIA ESTE COLOR PARA TODA LA PÁGINA! */
             --white: #FFFFFF;
             --black: #1a1b1f;
-            --light-gray: #f8f9fa;
+            --light-gray: #f2f0f3;
+            --purple: #7116f1;
             --primary-font: 'Outfit', sans-serif;
         }
 
-        /* Normalization and global styles */
+        /* Normalización y estilos globales */
         html {
             box-sizing: border-box;
             font-size: 62.5%;
@@ -41,12 +42,14 @@
             font-size: 1.6rem;
             line-height: 1.8;
             color: var(--black);
+            background-color: var(--light-gray);
         }
         .container {
             width: 95%;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         h1, h2, h3 {
             font-weight: 900;
             margin: 2rem 0;
@@ -63,6 +66,7 @@
             background-color: var(--white);
             padding: 2rem 0;
             border-bottom: 1px solid #e1e1e1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .header .container {
             display: flex;
@@ -80,25 +84,33 @@
         .navigation a:hover {
             color: var(--blue);
         }
+        .navigation-faq {
+            font-weight: 700;
+            color: var(--blue);
+        }
 
-        /* Hero Section */
+        /* Sección Hero */
         .hero {
             background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../public/Banner-Linkedin-empresas - Editada.png');
             background-size: cover;
+
             background-position: center;
             padding: 10rem 0;
             color: var(--white);
             text-align: center;
+            margin: 4rem;
         }
         .hero h1 {
             font-size: 5rem;
+            margin-bottom: 2rem;
         }
         .hero p {
             font-size: 2.2rem;
-            margin-bottom: 3rem;
+            line-height: 1.6;
+            margin-bottom: 4rem;
         }
 
-        /* Buttons */
+        /* Botones */
         .button {
             display: inline-block;
             background-color: var(--blue);
@@ -107,20 +119,55 @@
             font-weight: 700;
             border-radius: .5rem;
             transition: background-color .3s ease;
+            
         }
         .button:hover {
             background-color: #1a5cbf;
         }
 
-        /* Sections */
+        /* Secciones */
         .section {
             padding: 5rem 0;
         }
-        
-        /* Solution */
-        .solution-grid {
+
+        /* Problema */
+        .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        /* .problem-grid a {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        } */
+        /* .problem-grid a:hover {
+            transform: translateY(-5px);
+        } */
+        .problem-card {
+            background-color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #e1e1e1;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            /* cursor: pointer; */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .problem-card:hover {
+            box-shadow: 0 10px 30px rgba(43, 118, 227, 0.2);
+            border-color: var(--purple);
+        }
+        .problem-card h3 {
+            color: var(--purple);
+            font-size: 2.2rem;
+        }
+        
+        /* Solución */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -140,6 +187,8 @@
             border-radius: 1rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
         }
         .feature-card:hover {
             box-shadow: 0 10px 30px rgba(43, 118, 227, 0.2);
@@ -150,25 +199,52 @@
             font-size: 2.2rem;
         }
 
-        /* Team */
+        /* Equipo */
         .team-grid {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 4rem;
+            margin-top: 4rem;     
+            
         }
-        .team-member {
+        .team-grid a {
+         text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        .team-grid a:hover {
+            transform: translateY(-5px);
+        }
+        .team-member-card {
+            background-color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #e1e1e1;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .team-member-card:hover {
+            box-shadow: 0 10px 30px rgba(43, 118, 227, 0.2);
+            border-color: var(--blue);
+        }
+        .team-member-card h3 {
+            color: var(--blue);
+            font-size: 2.2rem;
+        }
+        .team-member-card .team-member {
             flex-basis: 300px;
             text-align: center;
         }
-        .team-member p {
+        .team-member-card p {
             margin: 0;
         }
-        .team-member .name {
+        .team-member-card .name {
             font-weight: 700;
         }
-        .team-member .role {
+        .team-member-card .role {
             font-size: 1.4rem;
             color: #555;
         }
@@ -192,7 +268,7 @@
             </a>
             <nav class="navigation">
                 <a rel="preload" href="#solution">Our Solution</a>
-                <a href="https://www.f6s.com/software/review?product=https-equiparents-app">Reviews</a>
+                <a href="https://www.f6s.com/software/https-equiparents-app">Reviews</a>
                 <a href="#team">Team</a>
                 <a href="https://javiera-francisca-rojas-w3y4f5ny.scoreapp.com">Blog</a>
             </nav>
@@ -200,13 +276,35 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Simplify co-parenting.</h1>
-                <p>Manage agreements, time, and communication, avoiding lawsuits and improving the relationship with your children.</p>
+                <section class="hero">
+            <div class="section container">
+                <h1>Making Co-Parenting Easier.</h1>
+                <p>In a country with a high divorce rate, managing co-parenting presents emotional and logistical challenges. Equi-Parents was born as a digital solution to transform this reality.</p>
+
                 <a href="../formulario.html" class="button">Join the Waiting List!</a>
             </div>
         </section>
+       
+      <section id="problem" class="section container">
+          <h2 class="text-3xl font-bold text-center mb-10 text-[#1a1b1f]">The Challenge of Co-Parenting</h2>
+          <div class="problem-grid">
+              <div class="problem-card">
+                  <h3>Emotional Stress</h3>
+                  <div class="text-5xl mb-4">😟</div>
+                  <p class="text-gray-700">The mental and emotional burden of coordination takes a significant toll on parents.</p>
+              </div>
+              <div class="problem-card">
+                  <h3>Conflicts Management</h3>
+                  <div class="text-5xl mb-4">🤯</div>
+                  <p class="text-gray-700">The lack of centralized tools leads to misunderstandings about agreements, schedules, and expenses.</p>
+              </div>
+              <div class="problem-card">
+                  <h3>Communication Breakdowns</h3>
+                  <div class="text-5xl mb-4">💬</div>
+                  <p class="text-gray-700">Direct communication often becomes a focal point of conflict, affecting children's well-being.</p>
+              </div>
+          </div>
+      </section>
 
         <section id="solution" class="section container">
             <h2>Our Solution</h2>
@@ -223,7 +321,7 @@
                         <p>Organize parenting time with a smart calendar and automatic reminders.</p>
                     </div>
                 </a>
-                <a href="family_canvas.html">
+                <a href="chat.html">
                     <div class="feature-card">
                         <h3>Secure Communication</h3>
                         <p>Improve dialogue through secure messaging focused on your children's well-being.</p>
@@ -243,24 +341,24 @@
                 </a>
                 <a href="https://equiparents.app">
                     <div class="feature-card">
-                        <h3>Try it for Free</h3>
+                        <h3>Try the Beta Web App for Free</h3>
                         <p>Experience all features without any limitations.</p>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section id="team" class="section container">
+        <section id="team" class="container">
             <h2>Our Team</h2>
              <div class="team-grid">
-                <div class="team-member">
+                <div class="team-member-card">
                     <p class="name">Javiera Rojas Cowper</p>
                     <p class="role">CEO, Founder</p>
-                    <a href="about_ceo.html" class="navigation">Javiera's Profile</a>
+                    <a href="/en/about_ceo.html" class="navigation">Javiera's Profile</a>
                 </div>
 
                 
-                <div class="team-member">
+                <div class="team-member-card">
                     <p class="name">Benjamín Prieto Cowper</p>
                     <p class="role">Co-founder</p>
                 <a href="about_cfo.html" class="navigation">Benjamín's Profile</a>
@@ -268,6 +366,10 @@
                 </div>
             </div>
         </section>
+        <div class="section container text-center">
+            <h2>¿Do you have any questions?</h2>
+            <p>Visit our <a href="../en/carruselFAQ.html" class="navigation-faq">Frequent Asked Questions section</a> for more information.</p>
+        </div>
 
         <section id="wishlist" class="section container text-center">
             <h2>Be the first to try Equi-Parents</h2>
@@ -279,7 +381,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Equi-Parents. All rights reserved.</p>
+            <p>2025 Equi-Parents. All rights reserved.</p>
         </div>
     </footer>
 

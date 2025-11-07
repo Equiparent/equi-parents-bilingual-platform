@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Acuerdos - Equi-Parents</title>
+    <title>Co-Parenting Agreements - Equi-Parents</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -87,101 +87,88 @@
         }
 
         .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            /* display: grid; */
+            /* grid-template-columns: repeat(4, 1fr); */
             gap: 0.75rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .principle-item {
             background: rgba(0,0,0,0.2);
             border-radius: 0.75rem;
             padding: 1rem 0.5rem;
-            font-size: 0.75rem;
+            font-size: 1rem;
             font-weight: 500;
+            text-align: center;
         }
         .principle-item .icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
 
-        .agreement-card {
+        /* .principle-1 { border: 2px solid var(--accent-orange); }
+        .principle-2 { border: 2px solid var(--accent-green); }
+        .principle-3 { border: 2px solid var(--accent-blue); }
+        .principle-4 { border: 2px solid var(--accent-pink); } */
+
+        .agreements-section {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
             border: 1px solid var(--card-border);
             border-radius: 1.5rem;
             padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .agreement-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.75rem;
-        }
-        .agreement-icon {
-            font-size: 1rem;
-            width: 40px;
-            height: 40px;
-            border-radius: 0.5rem;
-            display: grid;
-            place-items: center;
-            color: white;
-            font-weight: 600;
-        }
-        .agreement-title h3 { font-size: 1.1rem; font-weight: 600; }
-        .agreement-title span { font-size: 0.8rem; color: var(--text-secondary); }
-
-        .agreement-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        .agreement-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        .status-badge {
-            background: rgba(0,0,0,0.2);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-weight: 500;
-        }
-        .details-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
+            margin-bottom: 1.5rem;
         }
         
-        .help-card {
-            text-align: center;
+        .agreements-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .help-card .icon { font-size: 2rem; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background-color: var(--accent-green); margin: 0 auto 1rem; }
-        .help-card h2 { justify-content: center;}
-        .help-card p { max-width: 30ch; margin-left: auto; margin-right: auto;}
-        .help-buttons { display: flex; gap: 1rem; margin-top: 1.5rem;}
-        .help-buttons .btn {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-size: 0.9rem;
+
+        .agreement-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .agreement-item:hover {
+            background: rgba(0,0,0,0.3);
+        }
+        .agreement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .agreement-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .agreement-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .agreement-status {
+            font-size: 0.75rem;
+            color: var(--accent-green);
             font-weight: 500;
-            transition: background-color 0.2s;
         }
-        .help-buttons .btn:hover { background-color: rgba(255, 255, 255, 0.25); }
     </style>
 </head>
 <body>
     <div class="mobile-frame">
         <div class="app-container">
             <header class="app-header">
-                <a href="landing.html" class="back-btn">&lt; Volver</a>
+                <a href="landing.html" class="back-btn">&lt; </a>
                 <div class="header-title">
                     <div>
-                        <h1>Acuerdos de Co-Parentalidad</h1>
+                        <h1>Acuerdos de Coparentalidad</h1>
                         <p>Marco legal y acuerdos familiares</p>
                     </div>
                 </div>
@@ -189,83 +176,78 @@
     
             <main class="container">
                 <div class="main-card">
-                    <h2>🛡️ Acuerdos Legales</h2>
-                    <p>Explora los diferentes tipos de acuerdos que ayudan a establecer un marco claro y justo para el cuidado de tus hijos.</p>
+                    <h2>Principios de Interés Superior</h2>
+                    <p>Nuestros acuerdos se basan en los principios fundamentales del bienestar infantil y la cooperación entre copadres.</p>
+
                     <div class="principles-grid">
-                        <div class="principle-item"><div class="icon">⚖️</div>Marco Legal</div>
-                        <div class="principle-item"><div class="icon">🛡️</div>Protección</div>
-                        <div class="principle-item"><div class="icon">🤝</div>Colaboración</div>
-                        <div class="principle-item"><div class="icon">💎</div>Transparencia</div>
+                        <div class="principle-item principle-1">
+                            <div>👶</div>
+                            <div>Interés Superior de los Hijos</div>
+                        </div>
+                        <div class="principle-item principle-2">
+                            <div>🤝</div>
+                            <div>Respeto Mutuo</div>
+                        </div>
+                        <div class="principle-item principle-3">
+                            <div>💬</div>
+                            <div>Comunicación Abierta</div>
+                        </div>
+                        <div class="principle-item principle-4">
+                            <div>⚖️</div>
+                            <div>Distribución Justa</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="agreement-card">
-                    <div class="agreement-header">
-                        <div class="agreement-icon" style="background-color: var(--accent-orange);">O</div>
+                <div class="agreements-section">
+                    <h3>📝 Acuerdos Activos</h3>
+                    
+                    <div class="agreement-item">
                         <div class="agreement-title">
-                            <span>Acuerdo #1</span>
-                            <h3>Régimen de Cuidado</h3>
+                            💰 Acuerdo de Manutención Infantil
+                        </div>
+                        <div class="agreement-description">
+                            Monto mensual para necesidades básicas, incluyendo alimentos, vivienda, educación y atención médica.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Activo - Próximo pago: 15 de octubre de 2025
                         </div>
                     </div>
-                    <p>Establecimiento de horarios, responsabilidades y acuerdos para el cuidado compartido de los hijos, garantizando el bienestar.</p>
-                    <div class="agreement-footer">
-                        <span class="status-badge">Disponible</span>
-                        <a href="#" class="details-link">Ver detalles →</a>
-                    </div>
-                </div>
 
-                <div class="agreement-card">
-                    <div class="agreement-header">
-                        <div class="agreement-icon" style="background-color: var(--accent-green);">$</div>
+                    <div class="agreement-item">
                         <div class="agreement-title">
-                            <span>Acuerdo #2</span>
-                            <h3>Pensión de Alimentos</h3>
+                            📅 Acuerdo de Custodia
+                        </div>
+                        <div class="agreement-description">
+                            Acuerdo de semanas alternas con ajustes flexibles para vacaciones y eventos especiales.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Activo - Semana actual: Padre A
                         </div>
                     </div>
-                    <p>Detalles y cálculos de los gastos propios de los hijos, incluyendo alimentación, educación, salud y gastos básicos.</p>
-                    <div class="agreement-footer">
-                        <span class="status-badge">Disponible</span>
-                        <a href="#" class="details-link">Ver detalles →</a>
-                    </div>
-                </div>
-                
-                <div class="agreement-card">
-                    <div class="agreement-header">
-                        <div class="agreement-icon" style="background-color: var(--accent-blue);">👥</div>
-                        <div class="agreement-title">
-                            <span>Acuerdo #3</span>
-                            <h3>Gastos Extras</h3>
-                        </div>
-                    </div>
-                    <p>Cálculo de los gastos extras como actividades, ropa adicional, salidas especiales y necesidades imprevistas.</p>
-                    <div class="agreement-footer">
-                        <span class="status-badge">Disponible</span>
-                        <a href="#" class="details-link">Ver detalles →</a>
-                    </div>
-                </div>
 
-                <div class="agreement-card">
-                    <div class="agreement-header">
-                        <div class="agreement-icon" style="background-color: var(--accent-pink);">O</div>
+                    <div class="agreement-item">
                         <div class="agreement-title">
-                            <span>Acuerdo #4</span>
-                            <h3>Gastos Extraordinarios</h3>
+                            🏥 Acuerdo de Atención Médica
+                        </div>
+                        <div class="agreement-description">
+                            Responsabilidad compartida para decisiones médicas y cobertura de seguro de salud.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Activo - Seguro: Cubierto
                         </div>
                     </div>
-                    <p>Proporcionalidad de los gastos imprevistos, incluyendo emergencias médicas, equipos escolares y situaciones excepcionales.</p>
-                    <div class="agreement-footer">
-                        <span class="status-badge">Disponible</span>
-                        <a href="#" class="details-link">Ver detalles →</a>
-                    </div>
-                </div>
 
-                <div class="main-card help-card">
-                    <div class="icon">🛡️</div>
-                    <h2>✨ ¿Necesitas ayuda personalizada?</h2>
-                    <p>Nuestros acuerdos están diseñados para adaptarse a diferentes situaciones familiares.</p>
-                    <div class="help-buttons">
-                        <a href="#" class="btn">🏠 Volver al Dashboard</a>
-                        <a href="#" class="btn">📊 Ver Resumen Financiero</a>
+                    <div class="agreement-item">
+                        <div class="agreement-title">
+                            📚 Acuerdo de Elección Educativa
+                        </div>
+                        <div class="agreement-description">
+                            Toma de decisiones conjunta para la selección de escuelas, actividades extracurriculares y apoyo académico.
+                        </div>
+                        <div class="agreement-status">
+                            ✅ Activo - Año escolar: 2025-2026
+                        </div>
                     </div>
                 </div>
 
