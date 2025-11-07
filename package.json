@@ -70,13 +70,20 @@
     "not op_mini all"
   ],
   "engines": {
-    "node": ">=16.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=10.0.0"
   },
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@10.0.0",
   "files": [
     "*.html",
     "public/**/*",
     "README.md"
-  ]
+  ],
+  "pnpm.onlyBuiltDependencies": {
+    "gifsicle": false,
+    "jpegtran-bin": false,
+    "optipng-bin": false
+
+  }
+
 }
