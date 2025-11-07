@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de EquiParents - Nuevo Diseño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .flashcard {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-left: 8px solid #4855F1; /* Nuevo azul de la paleta */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flashcard-front {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #8E46F0; /* Nuevo morado de la paleta */
+            margin-bottom: 1rem;
+        }
+        .flashcard-back {
+            font-size: 1rem;
+            color: #000000; /* Negro de la paleta */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#4855F1] to-[#8E46F0]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2">Flashcards de <span class="text-white" style="text-shadow: 0 0 10px rgba(255,255,255,0.7);">EquiParents</span></h1>
+            <p class="text-lg text-gray-200">Conceptos clave con el nuevo estilo visual.</p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="flashcard">
+                <div class="flashcard-front">Misión de EquiParents</div>
+                <div class="flashcard-back">Facilitar la navegación en las turbulentas aguas de la paternidad y maternidad separada.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Objetivo principal de EquiParents</div>
+                <div class="flashcard-back">Facilitar la organización de la custodia igualitaria para mamás y papás separados.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Problema principal que resuelve la app</div>
+                <div class="flashcard-back">Las discusiones y complicaciones al organizar horarios, gastos y comunicación en la crianza compartida.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Característica: Agenda Compartida</div>
+                <div class="flashcard-back">Permite organizar días o semanas del año con colores distintivos para cada padre, facilitando la visualización de la custodia.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Característica: Gestión de Gastos</div>
+                <div class="flashcard-back">Permite llevar un registro transparente de los gastos de crianza y la manutención de los hijos.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Característica: Notificaciones</div>
+                <div class="flashcard-back">Recuerda compromisos, turnos de custodia y avisa si hay algún cambio en el calendario.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Característica: Mediación en Línea</div>
+                <div class="flashcard-back">Ofrece un espacio para ayudar a resolver conflictos que puedan surgir entre los padres.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Funcionamiento del sistema de semanas alternas</div>
+                <div class="flashcard-back">Los niños pasan una semana completa con uno de los padres y la siguiente semana con el otro.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Beneficio del sistema de semanas alternas</div>
+                <div class="flashcard-back">Permite a ambos padres pasar tiempo de calidad con los niños, compartir actividades y ayudar con los deberes.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Requisito para el funcionamiento eficiente del sistema</div>
+                <div class="flashcard-back">Es necesario que ambos padres utilicen la plataforma para asegurar que todos estén en la misma página.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Solución a la comunicación con nuevas parejas</div>
+                <div class="flashcard-back">Centraliza la comunicación en la plataforma, evitando llamadas o mensajes directos que puedan causar conflictos.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Característica: Estadísticas e Informes</div>
+                <div class="flashcard-back">Proporciona un resumen mensual con información relevante sobre los avances y logros de los hijos.</div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
+

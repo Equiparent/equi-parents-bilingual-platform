@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EquiParents AI Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg-gradient: linear-gradient(160deg, #3b82f6 0%, #a855f7 100%);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #d8b4fe;
+            --accent-orange: #f97316;
+            --accent-green: #22c55e;
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+         .mobile-frame {
+            max-width: 420px;
+            margin: auto;
+            background-color: #0f172a;
+            border-radius: 2.5rem;
+            padding: 0.75rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+        .header-title h1 { font-size: 1.25rem; font-weight: 600; }
+        .header-title p { font-size: 0.85rem; color: var(--text-secondary); }
+        .back-btn { color: var(--text-primary); text-decoration: none; font-size: 1rem; }
+        
+         .app-container {
+            background: var(--bg-gradient);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            height: 800px;
+            overflow-y: auto;
+        }
+         .app-container::-webkit-scrollbar { width: 0; }
+
+        .container { max-width: 700px; margin: 0 auto; }
+        
+        /* .container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            padding: 2.5rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        } */
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .card {
+            background-color: #edf2f7;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .chat-bubble {
+            background-color: #a0aec0;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        .chat-bubble.user {
+            background-color: #4299e1;
+            align-self: flex-end;
+        }
+        .loading-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            color: #4a5568;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="capture-area">
+        <div class="mobile-frame">
+            <div class="app-container">
+                 <header class="app-header">
+                <a href="landing.html" class="back-btn">&lt; Volver</a>
+                <div class="header-title">
+                    <div>
+                        <h1>Chat Seguro</h1>
+                    </div>
+                </div>
+            </header>
+    
+                <main class="container">
+        <!-- <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Demostración de Funcionalidades de IA en EquiParents</h1> -->
+
+        <!-- Resumen Inteligente de Comunicaciones -->
+        <div class="card">
+            
+            <h2 class="section-title">✨ Resumen Inteligente de Comunicaciones</h2>
+            <div id="chatHistory" class="flex flex-col gap-2 mb-4">
+                <div class="chat-bubble">Papá: ¿Podemos cambiar el día de recogida de los niños para el martes esta semana?</div>
+                <div class="chat-bubble user">Mamá: Sí, no hay problema. ¿A qué hora sería?</div>
+                <div class="chat-bubble">Papá: A las 5 PM en la casa de la abuela.</div>
+                <div class="chat-bubble user">Mamá: Perfecto. Y recuerda que la clase de natación de Sofía es el miércoles a las 4 PM.</div>
+                <div class="chat-bubble">Papá: Ok, anotado. ¿Necesitas que lleve algo para la natación?</div>
+                <div class="chat-bubble user">Mamá: Solo su toalla y gafas. Gracias!</div>
+            </div>
+            <button id="summarizeChatBtn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                ✨ Resumir Conversación
+            </button>
+            <div id="chatSummaryResult" class="mt-4 p-3 bg-blue-100 text-blue-800 rounded-md hidden"></div>
+            <div id="chatSummaryLoading" class="loading-indicator hidden">
+                <div class="loading-spinner"></div> Cargando resumen...
+            </div>
+        </div>
+
+        <!-- Asistente de Redacción de Eventos -->
+        <div class="card">
+            <h2 class="section-title">✨ Asistente de Redacción de Eventos</h2>
+            <label for="eventTitle" class="block text-sm font-medium text-gray-700">Título del Evento:</label>
+            <input type="text" id="eventTitle" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Ej: Fiesta de cumpleaños de Juan">
+
+            <label for="eventDescription" class="block text-sm font-medium text-gray-700 mt-2">Descripción Original:</label>
+            <textarea id="eventDescription" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-24" placeholder="Ej: Juan cumple 8 años y haremos una fiesta en casa."></textarea>
+
+            <button id="suggestEventBtn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                ✨ Sugerir Descripción
+            </button>
+            <div id="suggestedEventResult" class="mt-4 p-3 bg-green-100 text-green-800 rounded-md hidden"></div>
+            <div id="suggestedEventLoading" class="loading-indicator hidden">
+                <div class="loading-spinner"></div> Generando sugerencia...
+            </div>
+        </div>
+
+        <!-- Asesoría Legal General con IA -->
+        <div class="card">
+            <h2 class="section-title">✨ Asesoría Legal General con IA</h2>
+            <label for="legalQuery" class="block text-sm font-medium text-gray-700">Tu Consulta Legal (general):</label>
+            <textarea id="legalQuery" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-24" placeholder="Ej: ¿Qué derechos tengo sobre las decisiones escolares de mi hijo si tenemos custodia compartida?"></textarea>
+
+            <button id="getLegalAdviceBtn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                ✨ Obtener Asesoría Legal General
+            </button>
+            <div id="legalAdviceResult" class="mt-4 p-3 bg-yellow-100 text-yellow-800 rounded-md hidden"></div>
+            <div id="legalAdviceLoading" class="loading-indicator hidden">
+                <div class="loading-spinner"></div> Buscando información legal...
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Función para llamar a la API de Gemini
+        async function callGeminiAPI(prompt) {
+            const apiKey = ""; // La clave API se proporcionará en tiempo de ejecución
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            const payload = { contents: chatHistory };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    return "No se pudo obtener una respuesta. Inténtalo de nuevo.";
+                }
+            } catch (error) {
+                console.error("Error al llamar a la API de Gemini:", error);
+                return "Ocurrió un error al procesar la solicitud.";
+            }
+        }
+
+        // --- Funcionalidad de Resumen de Chat ---
+        document.getElementById('summarizeChatBtn').addEventListener('click', async () => {
+            const chatHistoryElement = document.getElementById('chatHistory');
+            const chatMessages = Array.from(chatHistoryElement.children).map(bubble => bubble.textContent).join('\n');
+            const resultDiv = document.getElementById('chatSummaryResult');
+            const loadingDiv = document.getElementById('chatSummaryLoading');
+
+            resultDiv.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+
+            const prompt = `Por favor, resume la siguiente conversación de chat de padres, destacando los puntos clave y cualquier acuerdo o tarea importante:\n\n${chatMessages}`;
+            const summary = await callGeminiAPI(prompt);
+
+            loadingDiv.classList.add('hidden');
+            resultDiv.textContent = summary;
+            resultDiv.classList.remove('hidden');
+        });
+
+        // --- Funcionalidad de Sugerencia de Descripción de Eventos ---
+        document.getElementById('suggestEventBtn').addEventListener('click', async () => {
+            const eventTitle = document.getElementById('eventTitle').value;
+            const eventDescription = document.getElementById('eventDescription').value;
+            const resultDiv = document.getElementById('suggestedEventResult');
+            const loadingDiv = document.getElementById('suggestedEventLoading');
+
+            if (!eventTitle && !eventDescription) {
+                resultDiv.textContent = "Por favor, ingresa un título o descripción original para el evento.";
+                resultDiv.classList.remove('hidden');
+                resultDiv.classList.remove('bg-green-100', 'text-green-800');
+                resultDiv.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            resultDiv.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+            resultDiv.classList.remove('bg-red-100', 'text-red-800');
+            resultDiv.classList.add('bg-green-100', 'text-green-800');
+
+
+            const prompt = `Mejora y haz más atractiva la siguiente descripción de evento para una aplicación de coparentalidad. El título es "${eventTitle}" y la descripción original es: "${eventDescription}". Sugiere una descripción concisa y amigable.`;
+            const suggestedDescription = await callGeminiAPI(prompt);
+
+            loadingDiv.classList.add('hidden');
+            resultDiv.textContent = suggestedDescription;
+            resultDiv.classList.remove('hidden');
+        });
+
+        // --- Funcionalidad de Asesoría Legal General ---
+        document.getElementById('getLegalAdviceBtn').addEventListener('click', async () => {
+            const legalQuery = document.getElementById('legalQuery').value;
+            const resultDiv = document.getElementById('legalAdviceResult');
+            const loadingDiv = document.getElementById('legalAdviceLoading');
+
+            if (!legalQuery.trim()) {
+                resultDiv.textContent = "Por favor, escribe tu consulta legal.";
+                resultDiv.classList.remove('hidden');
+                resultDiv.classList.remove('bg-yellow-100', 'text-yellow-800');
+                resultDiv.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            resultDiv.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+            resultDiv.classList.remove('bg-red-100', 'text-red-800');
+            resultDiv.classList.add('bg-yellow-100', 'text-yellow-800');
+
+            const prompt = `Actúa como un asistente que proporciona información legal general y clara sobre temas de coparentalidad en Chile. Responde a la siguiente consulta: "${legalQuery}". Por favor, aclara que esta no es una asesoría legal vinculante y que siempre se debe consultar a un abogado.`;
+            const legalAdvice = await callGeminiAPI(prompt);
+
+            loadingDiv.classList.add('hidden');
+            resultDiv.textContent = legalAdvice;
+            resultDiv.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

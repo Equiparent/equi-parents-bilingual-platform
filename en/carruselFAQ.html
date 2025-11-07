@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de EquiParents - Nuevo Diseño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+         .navigation a {
+            margin-left: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+        .navigation a:hover {
+            color: var(--blue);
+        }
+        .back-btn { color:whitesmoke; text-decoration: none; font-size: 1rem; &:hover { color: purple; } }
+
+        .flashcard {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-left: 8px solid #4855F1; /* Nuevo azul de la paleta */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flashcard-front {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #8E46F0; /* Nuevo morado de la paleta */
+            margin-bottom: 1rem;
+        }
+        .flashcard-back {
+            font-size: 1rem;
+            color: #000000; /* Negro de la paleta */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#4855F1] to-[#8E46F0]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2">Frequent Asked Questions <span class="text-white" style="text-shadow: 0 0 10px rgba(255,255,255,0.7);">EquiParents</span></h1>
+            <p class="text-lg text-gray-200">Key concepts about the web services platform for separated parents.</p>
+    <a href="/en/landing.html" class="back-btn">&lt; Back</a>
+
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="flashcard">
+                <div class="flashcard-front">What is the Mission of Equi-Parents?</div>
+                <div class="flashcard-back">To facilitate navigation through the turbulent waters of separated parenting.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the main Objective of Equi-Parents?</div>
+                <div class="flashcard-back">To facilitate the organization of equal custody for separated moms and dads.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the main Problem that Equi-Parents solves?</div>
+                <div class="flashcard-back">Discussions and complications in organizing schedules, expenses, and communication in shared parenting.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the functionality: Shared Calendar?</div>
+                <div class="flashcard-back">Allows organizing days or weeks of the year with distinctive colors for each parent, facilitating the visualization of custody.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the functionality: Expense Management?</div>
+                <div class="flashcard-back">Allows for transparent tracking of child-rearing expenses and maintenance.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the functionality: Notifications?</div>
+                <div class="flashcard-back">Reminds about commitments, custody shifts, and alerts if there are any changes in the calendar.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the functionality: Online Mediation?</div>
+                <div class="flashcard-back">Offers a direct link to schedule an online mediation session; a free space to help resolve conflicts that may arise between parents.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the alternating weeks custody arrangement?</div>
+                <div class="flashcard-back">Children spend a full week with one parent and the following week with the other.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What is the benefit of the alternating weeks system?</div>
+                <div class="flashcard-back">Allows both parents to spend quality time with the children, share activities, and help with homework.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">What are the requirements for the efficient functioning of custody arrangements?</div>
+                <div class="flashcard-back">It is ideal, but not exclusive, for both parents to use the platform to ensure everyone is on the same page.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Is there a solution for parents' communication with new partners?</div>
+                <div class="flashcard-back">By centralizing parents' communication on the platform, it avoids calls or direct messages that could cause conflicts with new partners.</div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Does the Equi-Parents web platform provide Summaries, Statistics, or Reports?</div>
+                <div class="flashcard-back">Yes. Equi-Parents provides a monthly summary with relevant information about the children's progress and achievements, with the option to download them.</div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
+
